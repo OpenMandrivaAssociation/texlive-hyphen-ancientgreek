@@ -14,11 +14,11 @@ License:	http://www.tug.org/texlive/LICENSE.TL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hyphen-ancientgreek.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
-Requires(post):	texlive-tlpkg
-Requires:	texlive-hyphen-base
+Requires(pre):	texlive-tlpkg
+Requires(post):	texlive-kpathsea
+Requires(post):	texlive-hyphen-base
 Requires:	texlive-hyph-utf8
 Conflicts:	texlive-texmf <= 20110705-3
-Requires(post):	texlive-hyphen-base
 
 %description
 Hyphenation patterns for Ancient Greek in LGR and UTF-8
@@ -34,10 +34,8 @@ U+1F75 for eta.
     %_texmf_mktexlsr_pre
 
 %post
-    %_texmf_language_dat_post
-    %_texmf_language_def_post
-    %_texmf_language_lua_post
     %_texmf_mktexlsr_post
+    %_texmf_language_lua_post
 
 %preun
     if [ $1 -eq 0 ]; then
@@ -49,10 +47,8 @@ U+1F75 for eta.
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_language_dat_post
-	%_texmf_language_def_post
-	%_texmf_language_lua_post
 	%_texmf_mktexlsr_post
+	%_texmf_language_lua_post
     fi
 
 #-----------------------------------------------------------------------
