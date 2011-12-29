@@ -18,7 +18,6 @@ Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
 Requires(post):	texlive-hyphen-base
 Requires:	texlive-hyph-utf8
-Conflicts:	texlive-texmf <= 20110705-3
 
 %description
 Hyphenation patterns for Ancient Greek in LGR and UTF-8
@@ -27,28 +26,12 @@ encoding. Patterns in UTF-8 use two code positions for each of
 the vowels with acute accent (a.k.a tonos, oxia), e.g., U+03AE,
 U+1F75 for eta.
 
-%pre
-    %_texmf_language_dat_pre
-    %_texmf_language_def_pre
-    %_texmf_language_lua_pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-    %_texmf_language_lua_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_language_dat_pre
-	%_texmf_language_def_pre
-	%_texmf_language_lua_pre
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
-	%_texmf_language_lua_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -58,7 +41,6 @@ U+1F75 for eta.
 %_texmf_language_dat_d/hyphen-ancientgreek
 %_texmf_language_def_d/hyphen-ancientgreek
 %_texmf_language_lua_d/hyphen-ancientgreek
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -69,8 +51,6 @@ U+1F75 for eta.
 %install
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf %{buildroot}%{_datadir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-ancientgreek <<EOF
 %% from hyphen-ancientgreek:
