@@ -53,13 +53,13 @@ mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-ancientgreek <<EOF
-%% from hyphen-ancientgreek:
+\%\% from hyphen-ancientgreek:
 ancientgreek loadhyph-grc.tex
 ibycus ibyhyph.tex
 EOF
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-ancientgreek <<EOF
-%% from hyphen-ancientgreek:
+\%\% from hyphen-ancientgreek:
 \addlanguage{ancientgreek}{loadhyph-grc.tex}{}{1}{1}
 \addlanguage{ibycus}{ibyhyph.tex}{}{2}{2}
 EOF
