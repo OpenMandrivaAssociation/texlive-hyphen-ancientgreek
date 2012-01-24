@@ -5,8 +5,8 @@
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-hyphen-ancientgreek
-Version:	20111103
-Release:	2
+Version:	20120124
+Release:	1
 Summary:	Ancient Greek hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
@@ -53,16 +53,18 @@ mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-ancientgreek <<EOF
-\%\% from hyphen-ancientgreek:
+\%% from hyphen-ancientgreek:
 ancientgreek loadhyph-grc.tex
 ibycus ibyhyph.tex
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_dat_d}/hyphen-ancientgreek
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-ancientgreek <<EOF
-\%\% from hyphen-ancientgreek:
+\%% from hyphen-ancientgreek:
 \addlanguage{ancientgreek}{loadhyph-grc.tex}{}{1}{1}
 \addlanguage{ibycus}{ibyhyph.tex}{}{2}{2}
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_def_d}/hyphen-ancientgreek
 mkdir -p %{buildroot}%{_texmf_language_lua_d}
 cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-ancientgreek <<EOF
 -- from hyphen-ancientgreek:
