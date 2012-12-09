@@ -84,3 +84,25 @@ cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-ancientgreek <<EOF
 		special = 'disabled:8-bit only',
 	},
 EOF
+
+
+%changelog
+* Mon Jun 11 2012 Paulo Andrade <pcpa@mandriva.com.br> 20120611-1
++ Revision: 804684
+- Update to latest release.
+
+* Tue Jan 24 2012 Paulo Andrade <pcpa@mandriva.com.br> 20120124-1
++ Revision: 767506
+- Add workaround to rpm bug that broke hyphenation files
+
+* Wed Jan 11 2012 Paulo Andrade <pcpa@mandriva.com.br> 20111103-2
++ Revision: 759892
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20111103-1
++ Revision: 718634
+- texlive-hyphen-ancientgreek
+- texlive-hyphen-ancientgreek
+- texlive-hyphen-ancientgreek
+- texlive-hyphen-ancientgreek
+
