@@ -1,11 +1,11 @@
-# revision 25990
+# revision 29725
 # category TLCore
 # catalog-ctan undef
 # catalog-date undef
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-hyphen-ancientgreek
-Version:	20120611
+Version:	20131012
 Release:	1
 Summary:	Ancient Greek hyphenation patterns
 Group:		Publishing
@@ -36,8 +36,8 @@ U+1F75 for eta.
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdir}/tex/generic/hyphen/grahyph5.tex
-%{_texmfdir}/tex/generic/hyphen/ibyhyph.tex
+%{_texmfdistdir}/tex/generic/hyphen/grahyph5.tex
+%{_texmfdistdir}/tex/generic/hyphen/ibyhyph.tex
 %_texmf_language_dat_d/hyphen-ancientgreek
 %_texmf_language_def_d/hyphen-ancientgreek
 %_texmf_language_lua_d/hyphen-ancientgreek
@@ -49,8 +49,8 @@ U+1F75 for eta.
 %build
 
 %install
-mkdir -p %{buildroot}%{_datadir}
-cp -fpar texmf %{buildroot}%{_datadir}
+mkdir -p %{buildroot}%{_texmfdistdir}
+cp -fpar tex %{buildroot}%{_texmfdistdir}
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-ancientgreek <<EOF
 \%% from hyphen-ancientgreek:
@@ -84,25 +84,3 @@ cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-ancientgreek <<EOF
 		special = 'disabled:8-bit only',
 	},
 EOF
-
-
-%changelog
-* Mon Jun 11 2012 Paulo Andrade <pcpa@mandriva.com.br> 20120611-1
-+ Revision: 804684
-- Update to latest release.
-
-* Tue Jan 24 2012 Paulo Andrade <pcpa@mandriva.com.br> 20120124-1
-+ Revision: 767506
-- Add workaround to rpm bug that broke hyphenation files
-
-* Wed Jan 11 2012 Paulo Andrade <pcpa@mandriva.com.br> 20111103-2
-+ Revision: 759892
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20111103-1
-+ Revision: 718634
-- texlive-hyphen-ancientgreek
-- texlive-hyphen-ancientgreek
-- texlive-hyphen-ancientgreek
-- texlive-hyphen-ancientgreek
-
