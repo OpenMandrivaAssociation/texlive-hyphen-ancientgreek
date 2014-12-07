@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-hyphen-ancientgreek
 Version:	20131012
-Release:	7
+Release:	8
 Summary:	Ancient Greek hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
