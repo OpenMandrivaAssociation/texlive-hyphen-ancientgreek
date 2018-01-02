@@ -1,12 +1,6 @@
-# revision 29725
-# category TLCore
-# catalog-ctan undef
-# catalog-date undef
-# catalog-license undef
-# catalog-version undef
 Name:		texlive-hyphen-ancientgreek
-Version:	20131012
-Release:	9
+Version:	20170414
+Release:	1
 Summary:	Ancient Greek hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
@@ -36,6 +30,9 @@ U+1F75 for eta.
 
 #-----------------------------------------------------------------------
 %files
+%{_texmfdistdir}/tex/generic/hyph-utf8/loadhyph/*
+%{_texmfdistdir}/tex/generic/hyph-utf8/patterns/tex/*
+%{_texmfdistdir}/tex/generic/hyph-utf8/patterns/txt/*
 %{_texmfdistdir}/tex/generic/hyphen/grahyph5.tex
 %{_texmfdistdir}/tex/generic/hyphen/ibyhyph.tex
 %_texmf_language_dat_d/hyphen-ancientgreek
