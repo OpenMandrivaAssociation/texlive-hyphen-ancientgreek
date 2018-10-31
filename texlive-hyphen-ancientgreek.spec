@@ -1,6 +1,6 @@
 Name:		texlive-hyphen-ancientgreek
 Version:	20180303
-Release:	1
+Release:	2
 Summary:	Ancient Greek hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
