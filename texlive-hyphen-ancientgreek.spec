@@ -1,5 +1,5 @@
 Name:		texlive-hyphen-ancientgreek
-Version:	20181105
+Version:	20190406
 Release:	1
 Summary:	Ancient Greek hyphenation patterns
 Group:		Publishing
